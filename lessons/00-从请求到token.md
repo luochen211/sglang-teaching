@@ -22,7 +22,7 @@
 ```bash
 PYTHONPATH=src python3 examples/simulate_prefix_cache.py
 PYTHONPATH=src python3 examples/benchmark_fixture.py
-python3 -m unittest discover -s tests -v
+PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 这些输出是教学数据，不是 SGLang 在某张 GPU 上的性能承诺。
