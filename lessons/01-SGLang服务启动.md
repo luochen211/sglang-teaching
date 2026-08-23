@@ -1,6 +1,6 @@
 # 01｜启动一个真实的 SGLang 服务
 
-本节把 CPU 模拟推进到真实服务。命令参数以 [SGLang 官方文档](https://docs.sglang.ai/) 为准；SGLang 和模型版本会变化，执行前请重新查看官方安装说明。
+本节把 CPU 模拟推进到真实服务。命令参数以 [SGLang 官方文档](https://docs.sglang.io/) 为准；SGLang 和模型版本会变化，执行前请重新查看官方安装说明。
 
 ## 安装
 
@@ -11,7 +11,7 @@
 下面是一个教学用的小模型示例。模型权重需要从 Hugging Face 下载，显存、网络和模型支持情况需要自行确认：
 
 ```bash
-python -m sglang.launch_server \
+python3 -m sglang.launch_server \
   --model-path Qwen/Qwen2.5-0.5B-Instruct \
   --host 127.0.0.1 \
   --port 30000
@@ -36,4 +36,3 @@ curl http://127.0.0.1:30000/generate \
 - 记录模型、GPU、SGLang 版本、启动参数和请求参数
 
 “返回 200”只是第一道门。下一节开始测量复用和性能。
-
