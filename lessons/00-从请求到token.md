@@ -20,9 +20,9 @@
 ## 先跑不需要 GPU 的实验
 
 ```bash
-PYTHONPATH=src python examples/simulate_prefix_cache.py
-PYTHONPATH=src python examples/benchmark_fixture.py
-python -m unittest discover -s tests -v
+PYTHONPATH=src python3 examples/simulate_prefix_cache.py
+PYTHONPATH=src python3 examples/benchmark_fixture.py
+PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 这些输出是教学数据，不是 SGLang 在某张 GPU 上的性能承诺。
@@ -37,4 +37,3 @@ python -m unittest discover -s tests -v
 4. **吞吐量**：单位时间完成的请求数或 token 数。
 
 不要只看一个平均值。至少保留 p50 和 p99，并记录请求输入长度、输出长度、并发度、模型、硬件和服务参数。
-

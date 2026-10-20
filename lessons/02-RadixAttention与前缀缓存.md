@@ -9,7 +9,7 @@
 ## 运行实验
 
 ```bash
-PYTHONPATH=src python examples/simulate_prefix_cache.py
+PYTHONPATH=src python3 examples/simulate_prefix_cache.py
 ```
 
 你应该看到：
@@ -23,10 +23,10 @@ PYTHONPATH=src python examples/simulate_prefix_cache.py
 
 用同一组请求，比较启用与禁用 radix cache 的结果。不要只跑一次；要固定 warmup、输入输出长度、并发、请求顺序和随机参数，并保存原始结果。
 
-SGLang 官方 benchmark 文档提供了 `python -m sglang.bench_serving`，支持 TTFT、ITL、端到端延迟、吞吐量和 JSONL 结果输出。可以从下面的骨架开始：
+SGLang 官方 benchmark 文档提供了 `python3 -m sglang.bench_serving`，支持 TTFT、ITL、端到端延迟、吞吐量和 JSONL 结果输出。可以从下面的骨架开始：
 
 ```bash
-python -m sglang.bench_serving \
+python3 -m sglang.bench_serving \
   --backend sglang \
   --host 127.0.0.1 \
   --port 30000 \
@@ -35,7 +35,7 @@ python -m sglang.bench_serving \
   --output-details
 ```
 
-参考：[SGLang Bench Serving Guide](https://docs.sglang.ai/developer_guide/bench_serving)。
+参考：[SGLang Bench Serving Guide](https://docs.sglang.io/docs/developer_guide/bench_serving)。
 
 ## 需要警惕的误判
 
@@ -43,4 +43,3 @@ python -m sglang.bench_serving \
 - 更高吞吐量可能伴随更高尾延迟；
 - 更高 cache hit rate 不等于端到端一定更快，调度、并发和显存压力也会影响结果；
 - 不同模型、tokenizer、硬件和版本之间的数字不能直接横比。
-

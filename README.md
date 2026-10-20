@@ -24,21 +24,21 @@
 ## 5 分钟运行
 
 ```bash
-git clone https://github.com/cuidong233/sglang-teaching.git
+git clone https://github.com/luochen211/sglang-teaching.git
 cd sglang-teaching
 
-PYTHONPATH=src python examples/simulate_prefix_cache.py
-PYTHONPATH=src python examples/benchmark_fixture.py
+PYTHONPATH=src python3 examples/simulate_prefix_cache.py
+PYTHONPATH=src python3 examples/benchmark_fixture.py
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 也可以安装为本地包：
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e .
-python examples/simulate_prefix_cache.py
+python3 -m pip install -e .
+python3 examples/simulate_prefix_cache.py
 ```
 
 ## 课程路线
@@ -54,15 +54,15 @@ python examples/simulate_prefix_cache.py
 
 真实服务需要按官方文档安装：
 
-- [SGLang 官方文档](https://docs.sglang.ai/)
-- [Serving / launch server 相关文档](https://docs.sglang.ai/basic_usage/quickstart.html)
-- [Bench Serving Guide](https://docs.sglang.ai/developer_guide/bench_serving)
+- [SGLang 官方文档](https://docs.sglang.io/)
+- [Serving / launch server 相关文档](https://docs.sglang.io/docs/get-started/quickstart)
+- [Bench Serving Guide](https://docs.sglang.io/docs/developer_guide/bench_serving)
 - [SGLang 主仓库](https://github.com/sgl-project/sglang)
 
 示例启动命令：
 
 ```bash
-python -m sglang.launch_server \
+python3 -m sglang.launch_server \
   --model-path Qwen/Qwen2.5-0.5B-Instruct \
   --host 127.0.0.1 \
   --port 30000
